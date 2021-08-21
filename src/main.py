@@ -18,7 +18,7 @@ def load_csv():
             [returns a dataframe with cleaned words.]
     """
 
-    df = pd.read_csv('./data/questions1.csv')
+    df = pd.read_csv('./data/questions.csv')
     new_df = clean_dataframe(df)
 
     return new_df
