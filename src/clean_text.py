@@ -1,7 +1,7 @@
 import re
+
 import nltk
 from nltk.corpus import stopwords
-import nltk
 
 
 def clean_dataframe(df):
@@ -37,13 +37,12 @@ def clean_text(text):
     """
 
     text = text.lower()
-    text = re.sub(r"\[[0-9]*\]", " ", text)
-    text = re.sub(r"\s+", " ", text)
-    text = re.sub(r"\d", " ", text)
-    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"\[[0-9]*\]", " ", text)  # return white-space where similar text pattern is obtained
+    text = re.sub(r"\s+", " ", text)  # return white-space where there is digits (0-9) in the text
+    text = re.sub(r"\d", " ", text)  # return white-space if any white-space character, one or more times
     words = text.lower().split()
     stop_word_set = set(stopwords.words("english"))
-    cleaned_words = list(set([w for w in words if w not in stop_word_set]))
+    cleaned_words = list(set([word for word in words if word not in stop_word_set]))
     cleaned_words = [" ".join(cleaned_words[::])]
 
     return cleaned_words
