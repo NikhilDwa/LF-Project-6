@@ -1,5 +1,4 @@
-from src.main import *
-from src.clean_text import clean_text
+from src import clean_text, load_csv, finding_cosine_scores, top_five_questions_index
 
 df = load_csv()
 text = input("Enter your Python related question: ")
