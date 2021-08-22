@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+
 from src.clean_text import clean_dataframe
 from sentence_transformers import SentenceTransformer, util
 
@@ -18,7 +19,7 @@ def load_csv():
             [returns a dataframe with cleaned words.]
     """
 
-    df = pd.read_csv('./data/questions.csv')
+    df = pd.read_csv('./data/question.csv')
     new_df = clean_dataframe(df)
 
     return new_df
